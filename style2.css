@@ -1,0 +1,80 @@
+:root {
+  --maxw: 800px;
+  --bg: #0d1117;         /* dark background */
+  --fg: #39ff14;         /* neon green text */
+  --accent: #00ffff;     /* cyan links */
+  --dim: #228822;        /* dim green for secondary text */
+  --font: 'Courier New', monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: var(--maxw);
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid var(--dim);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  background-color: #0b0f13; /* subtle inner panel */
+}
+
+pre {
+  background: #09110d;
+  padding: 15px;
+  border: 1px solid var(--dim);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 4px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ff69b4; /* neon pink hover for contrast */
+}
+
+h1, .section-title {
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+nav {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+nav a {
+  display: block;
+  padding: 2px 0;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--dim);
+  border-top: 1px solid var(--dim);
+  padding-top: 5px;
+}
+
+/* Small visual improvements for readability */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--dim);
+  border-radius: 4px;
+}

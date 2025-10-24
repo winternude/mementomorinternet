@@ -1,0 +1,222 @@
+@font-face {
+  font-family: Meyrin; /* set name */
+  src: url(./fonts/Meyrin.woff); /* url of the font */
+}
+
+/* Line Mode Browser / classic terminal aesthetic */
+:root {
+  --maxw: 800px;
+  /* --bg: #000;
+  --fg: #00ff00;
+  --accent: #33ff33;
+  --dim: #009900; */
+  --bg: #ffffff;
+  --fg: #000000;
+  --accent: #33ff33;
+  --dim: #009900; */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Meyrin', monospace;
+  font-size: 14px;
+  line-height: -1;
+}
+
+.page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid var(--dim);
+  box-shadow: 0 0 10px #003300;
+}
+
+header {
+  border-bottom: 1px solid var(--dim);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: var(--accent);
+  font-size: 20px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.byline {
+  color: var(--dim);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+hr.rule {
+  border: 0;
+  border-top: 1px dashed var(--dim);
+  margin: 10px 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+}
+
+nav {
+  font-size: 14px;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  font-size: 15px;
+}
+
+.section-title {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+pre {
+  font-family: inherit;
+}
+
+pre.classic {
+  background: #001100;
+  color: var(--fg);
+  border: 1px solid var(--dim);
+  padding: 10px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.test {
+  max-width: 60%;
+  white-space: pre-wrap;
+}
+
+ul, ol {
+  /* margin: 8px 0 8px 20px; */
+}
+
+ol {
+    counter-reset: list;
+}
+
+ol > li {
+    list-style: none;
+    position: relative;
+}
+
+ol > li:before {
+    content: "[" counter(list) "]";
+    counter-increment: list;
+    left: -40px;
+    padding-right: 10px;
+    position: absolute;
+    text-align: right;
+    width: 40px;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+footer {
+  border-top: 1px solid var(--dim);
+  margin-top: 20px;
+  padding-top: 5px;
+  color: var(--dim);
+  font-size: 12px;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:visited {
+  color: #00cc00;
+}
+
+.links ul {
+  padding-left: 14px;
+  margin: 4px 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+/* File Tree Structure */
+
+.tree {
+    border-bottom: .5px solid;
+    border-left: .5px solid;
+    height: .75rem;
+    width: 1rem;
+    display: inline-block;
+    margin: 0 0 .2rem -2rem;
+
+}
+
+.treelist {
+  list-style: none;
+  margin: 0;
+
+  li {
+    list-style: none;
+    margin: 0;
+    font-size: .75rem;
+  }
+}
+
+/* Navigation */
+
+nav {
+
+  ul {
+  list-style: none;
+  }
+}
+
+/* Battery */
+/* .battery {
+      text-align: center;
+    }
+    .battery-bar {
+      width: 200px;
+      height: 30px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      margin-top: 10px;
+      background: #ddd;
+      position: relative;
+    }
+    .battery-level {
+      height: 100%;
+      background: limegreen;
+      width: 0%;
+      border-radius: 3px;
+      transition: width 0.3s;
+    } */
