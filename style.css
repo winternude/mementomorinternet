@@ -34,6 +34,8 @@ html, body {
   font-family: 'Meyrin', monospace;
   font-size: 15px;
   line-height: -1;
+  scroll-behavior: smooth;
+
 }
 
 .page {
@@ -262,6 +264,11 @@ a:visited {
     color: #000;
     text-decoration: none;
   }
+}
+
+/* Make sure footnote targets don't stick to the top when scrolled to */
+.footnote_list li {
+  scroll-margin-top: 10rem; /* adjust as needed */
 }
 
 /* Battery */
