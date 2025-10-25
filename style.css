@@ -3,26 +3,36 @@
   src: url(./fonts/Meyrin.woff); /* url of the font */
 }
 
+/* Browser Reset */
+* {
+    /* padding: 0;
+    margin: 0; */
+    box-sizing: border-box;
+}
+
 /* Line Mode Browser / classic terminal aesthetic */
 :root {
   --maxw: 800px;
-  /* --bg: #000;
+  --bg: #000;
   --fg: #00ff00;
   --accent: #33ff33;
-  --dim: #009900; */
-  --bg: #ffffff;
+  --dim: #009900;
+  /* --bg: #ffffff;
   --fg: #000000;
   --accent: #33ff33;
-  --dim: #009900; */
+  --dim: #009900; */ */
 }
 
 html, body {
   height: 100%;
   margin: 0;
-  background: var(--bg);
+  /* background: var(--bg); */
+  background: linear-gradient(to top, #000000, #000000, #333333, #333333);
+  background-size: cover;
+  background-size: 100% 1px;
   color: var(--fg);
   font-family: 'Meyrin', monospace;
-  font-size: 14px;
+  font-size: 15px;
   line-height: -1;
 }
 
@@ -47,6 +57,10 @@ h1 {
   text-transform: uppercase;
 }
 
+h4 {
+  margin-block: 0;
+}
+
 .byline {
   color: var(--dim);
   font-size: 13px;
@@ -65,8 +79,17 @@ hr.rule {
   gap: 20px;
 }
 
+/* Naviatin */
+
 nav {
   font-size: 14px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  
+  ul {
+    list-style: none;
+  }
 }
 
 nav a {
@@ -77,6 +100,35 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+nav ul {
+  width: 25vw;
+  
+}
+
+/* File Tree Structure */
+
+.tree {
+    border-bottom: .5px solid;
+    border-left: .5px solid;
+    height: .75rem;
+    width: 1rem;
+    display: inline-block;
+    margin: .5rem .2rem .2rem .5rem;
+
+}
+
+.treelist {
+  list-style: none;
+  margin: 1rem 0 0 0;
+
+  li {
+    list-style: none;
+    margin: 0;
+    font-size: .75rem;
+  }
+}
+
 
 main {
   font-size: 15px;
@@ -92,6 +144,10 @@ main {
 
 pre {
   font-family: inherit;
+  font-size: 18px;
+  /* if you want to have column */
+  /* columns: 3; */
+  
 }
 
 pre.classic {
@@ -100,11 +156,11 @@ pre.classic {
   border: 1px solid var(--dim);
   padding: 10px;
   white-space: pre-wrap;
-  font-size: 14px;
   margin: 12px 0;
+  
 }
 
-.test {
+.content {
   max-width: 60%;
   white-space: pre-wrap;
 }
@@ -130,6 +186,7 @@ ol > li:before {
     position: absolute;
     text-align: right;
     width: 40px;
+
 }
 
 li::marker {
@@ -157,6 +214,45 @@ a:visited {
   margin: 4px 0;
 }
 
+/* buttons */
+
+.info {
+    padding: 0 .2rem 0 .2rem;
+    border-radius: 5rem;
+    border: solid 1px var(--fg);
+    background-color: var(--bg);
+    color: var(--accent);
+    margin: 0 .25rem 0 .25rem;
+}
+
+.info-wrapper {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  max-width: 20vw;
+  height: 50px;
+  padding: 0;
+}
+
+#info-text {
+  transition: opacity 0.4s ease;
+  opacity: 1;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* The small label that appears before the info text */
+.info-visual {
+    padding: 0 .2rem 0 .2rem;
+    border-radius: 5rem;
+    border: solid 1px var(--fg);
+    background-color: var(--bg);
+    color: var(--accent);
+    margin: 0 .25rem 0 .25rem;
+    font-family: sans-serif, monospace;
+}
+
+
 @media print {
   body {
     background: #fff;
@@ -165,38 +261,6 @@ a:visited {
   a {
     color: #000;
     text-decoration: none;
-  }
-}
-
-/* File Tree Structure */
-
-.tree {
-    border-bottom: .5px solid;
-    border-left: .5px solid;
-    height: .75rem;
-    width: 1rem;
-    display: inline-block;
-    margin: 0 0 .2rem -2rem;
-
-}
-
-.treelist {
-  list-style: none;
-  margin: 0;
-
-  li {
-    list-style: none;
-    margin: 0;
-    font-size: .75rem;
-  }
-}
-
-/* Navigation */
-
-nav {
-
-  ul {
-  list-style: none;
   }
 }
 
