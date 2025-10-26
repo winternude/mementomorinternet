@@ -35,7 +35,6 @@ html, body {
   font-size: 15px;
   line-height: -1;
   scroll-behavior: smooth;
-
 }
 
 .page {
@@ -106,6 +105,11 @@ nav a:hover {
 nav ul {
   width: 25vw;
   
+}
+
+/* References */
+.ref {
+  text-decoration: none;
 }
 
 /* File Tree Structure */
