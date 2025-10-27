@@ -223,12 +223,15 @@ a:visited {
 /* buttons */
 
 .info {
-    padding: 0 .2rem 0 .2rem;
+    padding: 0rem .5rem 0rem .5rem;
     border-radius: 5rem;
     border: solid 1px var(--fg);
     background-color: var(--bg);
     color: var(--accent);
     margin: 0 .25rem 0 .25rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+    opacity: 1;
 }
 
 .info-wrapper {
@@ -249,7 +252,7 @@ a:visited {
 
 /* The small label that appears before the info text */
 .info-visual {
-    padding: 0 .2rem 0 .2rem;
+    padding: 0 .5rem 0 .5rem;
     border-radius: 5rem;
     border: solid 1px var(--fg);
     background-color: var(--bg);
@@ -271,7 +274,7 @@ a:visited {
 }
 
 /* Make sure footnote targets don't stick to the top when scrolled to */
-.footnote_list li {
+.footnotes li {
   scroll-margin-top: 10rem; /* adjust as needed */
 }
 
