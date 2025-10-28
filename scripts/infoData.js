@@ -32,5 +32,7 @@
 
     "dotcom crash": "dotcom crash",
 
-    "Flash": "A software by Adobe"
+    "Adobe Flash": "A software by Adobe",
+
+    "Antrophocene": "The human-made era"
   };
