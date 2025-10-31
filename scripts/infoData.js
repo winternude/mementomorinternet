@@ -36,5 +36,12 @@
 
     "Antrophocene": "The human-made era",
 
-    "download": "the action to ask/require the server a local machine is currently 'reading' through the means of a web broser, to write the files on the local machine, storing it on the local machine that way"
+    "download": "the action to ask/require the server a local machine is currently 'reading' through the means of a web broser, to write the files on the local machine, storing it on the local machine that way",
+
+    "dichotomy": "Dichotomy is a partition of a whole (or a set) into two parts (subsets). As part of this thesis, the relation of the words plays with the idea, that when talking about either dystopias or utopias, there can only exists both at the same time, like as polar opposites",
+
+    "cloud": "cloud or cloud computing is model to describe the use of remote server networks to store large amounts of data, to be downloaded instantly when needed",
+
+    "handmade web": "the handmade web is used to describe websites that are mostly built with basic hypertext and CSS and only rudimentary script technologies, in comparison to websites using modern web technologies as frameworks, template, decentralized, APIs, server-side technologies. Handmade websites are easier to archive and reinstate in the future"
+
   };
