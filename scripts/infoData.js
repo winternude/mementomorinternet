@@ -26,13 +26,15 @@
 
     "AI": "Artificial Intelligence",
 
-    "AWS": "Amazon Warehouse Services",
+    "AWS": "Amazon Web Services, the name given to the parts of Amazon Inc. that deals with their server infrastructure. The cloud is owned by the big tech giants, approximately 30% belongs to AWS, 20% to Microsoft Cloud and 12% falls to Google Cloud (ABC), [20]",
 
-    "NFTs": "Non Fungible Tokens",
+    "NFT": "Non Fungible Tokens",
 
-    "dotcom crash": "dotcom crash",
+    "dotcom crash": "'The dot-com bubble (or dot-com boom) was a stock market bubble that ballooned during the late 1990s and peaked on Friday, March 10, 2000. This period of market growth coincided with the widespread adoption of the World Wide Web and the Internet, resulting in a dispensation of available venture capital and the rapid growth of valuations in new dot-com startups'",
 
     "Adobe Flash": "A software by Adobe",
 
-    "Antrophocene": "The human-made era"
+    "Antrophocene": "The human-made era",
+
+    "download": "the action to ask/require the server a local machine is currently 'reading' through the means of a web broser, to write the files on the local machine, storing it on the local machine that way"
   };
