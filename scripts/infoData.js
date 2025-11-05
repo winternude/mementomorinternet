@@ -42,6 +42,14 @@
 
     "cloud": "cloud or cloud computing is model to describe the use of remote server networks to store large amounts of data, to be downloaded instantly when needed",
 
-    "handmade web": "the handmade web is used to describe websites that are mostly built with basic hypertext and CSS and only rudimentary script technologies, in comparison to websites using modern web technologies as frameworks, template, decentralized, APIs, server-side technologies. Handmade websites are easier to archive and reinstate in the future"
+    "handmade web": "the handmade web is used to describe websites that are mostly built with basic hypertext and CSS and only rudimentary script technologies, in comparison to websites using modern web technologies as frameworks, template, decentralized, APIs, server-side technologies. Handmade websites are easier to archive and reinstate in the future",
+
+    "Pinterest": "A image inspiration and reference collecting platform, which as part of the service and experience uses an alorithm and lets you make an account to present to you images fitting your user profile, searches and interests...",
+
+    "with a different business, philosophy and even algorithmic model": "are.na doesnt use an alorithm to show you a preselection of content you might like, it is managed by a fairly small team and is not free to use (apart from a 200 block limit for free users), so it can stay independent from investors, advertising and can refrain from selling your data...",
+
+    "Dead Internet Theory": "The Dead Internet Theory is an conspiracy theory circulating in the web space, that big parts of the content on the web we see, is not user generated but built by bots, scripts or artificial intelligence...",
+
+    "Geocities": "was a website builder and publishing platform tool in the early 90s"
 
   };
