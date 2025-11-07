@@ -32,7 +32,7 @@
 
     "dotcom crash": "'The dot-com bubble (or dot-com boom) was a stock market bubble that ballooned during the late 1990s and peaked on Friday, March 10, 2000. This period of market growth coincided with the widespread adoption of the World Wide Web and the Internet, resulting in a dispensation of available venture capital and the rapid growth of valuations in new dot-com startups'",
 
-    "Adobe Flash": "A software by Adobe",
+    "Adobe Flash": "Adobe Flash was a multimedia software platform that allowed for the creation and viewing of animated, interactive content like games, videos, and animations on the internet",
 
     "Antrophocene": "The human-made era",
 
@@ -50,6 +50,10 @@
 
     "Dead Internet Theory": "The Dead Internet Theory is an conspiracy theory circulating in the web space, that big parts of the content on the web we see, is not user generated but built by bots, scripts or artificial intelligence...",
 
-    "Geocities": "was a website builder and publishing platform tool in the early 90s"
+    "GeoCities": "was a website builder and publishing platform tool in the early 90s",
+
+    "Yahoo": "Yahoo is an American web portal and search engine that provides online services like email, news, and finance",
+    
+    "Apotheosis": "Apotheosis (from Ancient Greek ἀποθέωσις (apothéōsis), from ἀποθεόω/ἀποθεῶ (apotheóō/apotheô) 'to deify'), also called divinization or deification (from Latin deificatio 'making divine'), is the glorification of a subject to divine levels and, commonly, the treatment of a human being, any other living thing, or an abstract idea in the likeness of a deity"
 
   };

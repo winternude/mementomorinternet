@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kapitel Layout – Uneinheitliche Miniaturblöcke</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 15% 25% 60%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  nav { background:#f5f5f5; padding:0.5rem; border-right:1px solid #ddd; overflow-y:auto; }
+  nav ul { list-style:none; margin:0; padding:0; }
+  nav li { margin-bottom:.3rem; }
+  nav a { text-decoration:none; color:#333; font-size:.95rem; }
+  nav a:hover { text-decoration:underline; }
+
+  .chapters {
+    padding: 0.3rem;
+    background: #fafafa;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+  }
+
+  .chapter-block {
+    font-size: 0.55rem;  
+    line-height: 1.1;
+    overflow-y: scroll;  
+    padding: 0.15rem;
+    background: transparent;
+    cursor: pointer;
+    white-space: pre-wrap;
+    text-align: justify; 
+    scrollbar-width: none;       
+    -ms-overflow-style: none;   
+  }
+  .chapter-block::-webkit-scrollbar { width: 0; background: transparent; }
+
+  /* Unterschiedliche Höhen für unregelmäßige Miniaturblöcke */
+  .chapter-block:nth-child(1) { max-height: 180px; }
+  .chapter-block:nth-child(2) { max-height: 250px; }
+  .chapter-block:nth-child(3) { max-height: 200px; }
+  .chapter-block:nth-child(4) { max-height: 220px; }
+  .chapter-block:nth-child(5) { max-height: 260px; }
+  .chapter-block:nth-child(6) { max-height: 190px; }
+  .chapter-block:nth-child(7) { max-height: 230px; }
+  .chapter-block:nth-child(8) { max-height: 210px; }
+
+  .chapter-block img,
+  .column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.1rem 0;
+  }
+
+  .chapter-block h2,
+  .chapter-block h3 {
+    font-size: 0.55rem;
+    font-weight: normal;
+    margin: 0.05rem 0;
+  }
+
+  .chapter-block p,
+  .column p { margin: 0.05rem 0; }
+
+  .active-block { outline: 2px solid #007acc; }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 100vh;
+    background: #fff;
+    padding: 0.5rem;
+  }
+
+  .column {
+    overflow-y: hidden;
+    padding: 0.5rem;
+    border-left: 1px solid #eee;
+    white-space: pre-wrap; 
+  }
+
+  .column:hover { overflow-y: auto; }
+  .column h2, .column h3 { margin-top: 0; font-size: 1rem; font-weight: normal; }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#kap1-a" data-chapter="1">Kapitel 1</a></li>
+    <li><a href="#kap2-a" data-chapter="2">Kapitel 2</a></li>
+    <li><a href="#kap3-a" data-chapter="3">Kapitel 3</a></li>
+    <li><a href="#kap4-a" data-chapter="4">Kapitel 4</a></li>
+    <li><a href="#kap5-a" data-chapter="5">Kapitel 5</a></li>
+    <li><a href="#kap6-a" data-chapter="6">Kapitel 6</a></li>
+    <li><a href="#kap7-a" data-chapter="7">Kapitel 7</a></li>
+    <li><a href="#kap8-a" data-chapter="8">Kapitel 8</a></li>
+  </ul>
+</nav>
+
+<section class="chapters">
+  <div class="chapter-block" data-id="1">
+    <h2 id="kap1-a">Kapitel 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <img src="https://picsum.photos/200/100?1" alt="">
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet.</p>
+  </div>
+
+  <div class="chapter-block" data-id="2">
+    <h2 id="kap2-a">Kapitel 2</h2>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
+    <img src="https://picsum.photos/200/100?2" alt="">
+    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+    <p>Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+  </div>
+
+  <div class="chapter-block" data-id="3">
+    <h2 id="kap3-a">Kapitel 3</h2>
+    <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.</p>
+    <img src="https://picsum.photos/200/100?3" alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+    <p>Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+    <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam.</p>
+  </div>
+
+  <div class="chapter-block" data-id="4">
+    <h2 id="kap4-a">Kapitel 4</h2>
+    <p>Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+    <img src="https://picsum.photos/200/100?4" alt="">
+    <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam.</p>
+    <p>In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.</p>
+    <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla quis lorem ut libero malesuada feugiat.</p>
+    <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+  </div>
+
+  <div class="chapter-block" data-id="5">
+    <h2 id="kap5-a">Kapitel 5</h2>
+    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.</p>
+    <img src="https://picsum.photos/200/100?5" alt="">
+    <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+    <p>Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+    <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla quis lorem ut libero malesuada feugiat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+  </div>
+
+  <div class="chapter-block" data-id="6">
+    <h2 id="kap6-a">Kapitel 6</h2>
+    <p>Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+    <img src="https://picsum.photos/200/100?6" alt="">
+    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec.</p>
+    <p>Proin eget tortor risus. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+  </div>
+
+  <div class="chapter-block" data-id="7">
+    <h2 id="kap7-a">Kapitel 7</h2>
+    <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt.</p>
+    <img src="https://picsum.photos/200/100?7" alt="">
+    <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla quis lorem ut libero malesuada feugiat.</p>
+    <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+  </div>
+
+  <div class="chapter-block" data-id="8">
+    <h2 id="kap8-a">Kapitel 8</h2>
+    <p>Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+    <img src="https://picsum.photos/200/100?8" alt="">
+    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.</p>
+    <p>Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. XXXXXX</p>
+    <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+  </div>
+</section>
+
+<section class="content" id="content">
+  <div class="column" id="col1"></div>
+  <div class="column" id="col2"></div>
+</section>
+
+<script>
+const col1 = document.getElementById('col1');
+const col2 = document.getElementById('col2');
+const chapterBlocks = document.querySelectorAll('.chapter-block');
+const navLinks = document.querySelectorAll('nav a');
+
+const data = {};
+chapterBlocks.forEach(block=>{
+  const id = block.dataset.id;
+  data[id] = { html: block.innerHTML };
+});
+
+function splitAndRender(html){
+  col1.innerHTML = '';
+  col2.innerHTML = '';
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+
+  let len1 = 0, len2 = 0;
+  Array.from(tmp.childNodes).forEach(node=>{
+    let weight = 0;
+    if(node.nodeType===Node.TEXT_NODE) weight = node.textContent.trim().length;
+    else if(node.nodeType===Node.ELEMENT_NODE){
+      weight = (node.textContent||'').trim().length;
+      if(node.tagName.toLowerCase()==='img') weight += 200;
+      if(['h1','h2','h3','ul','ol'].includes(node.tagName.toLowerCase())) weight+=50;
+    }
+    if(len1 <= len2){ col1.appendChild(node.cloneNode(true)); len1+=weight; }
+    else { col2.appendChild(node.cloneNode(true)); len2+=weight; }
+  });
+
+  col1.scrollTop = 0;
+  col2.scrollTop = 0;
+}
+
+chapterBlocks.forEach(b=>{
+  b.addEventListener('click',()=>{ selectChapter(b.dataset.id); });
+});
+
+function selectChapter(id){
+  chapterBlocks.forEach(b=>b.classList.toggle('active-block', b.dataset.id==id));
+  splitAndRender(data[id].html);
+}
+
+navLinks.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const chapterId = link.dataset.chapter;
+    const targetId = link.getAttribute('href').slice(1);
+    selectChapter(chapterId);
+    setTimeout(()=>{
+      const target1 = col1.querySelector('#'+CSS.escape(targetId));
+      const target2 = col2.querySelector('#'+CSS.escape(targetId));
+      if(target1) target1.scrollIntoView({behavior:'smooth',block:'start'});
+      else if(target2) target2.scrollIntoView({behavior:'smooth',block:'start'});
+    },50);
+  });
+});
+
+selectChapter(1);
+</script>
+
+</body>
+</html>
