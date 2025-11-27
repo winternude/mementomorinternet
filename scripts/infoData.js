@@ -58,6 +58,8 @@
 
     "Moore's law": "Moore's law is the observation that the number of transistors in an integrated circuit (IC) doubles about every two years. Moore's law is an observation and projection of a historical trend. Rather than a law of physics, it is an empirical relationship. It is an experience curve effect, a type of observation quantifying efficiency gains from learned experience in production. https://en.wikipedia.org/wiki/Moore%27s_law",
 
-    "crawling": "The act of searching the web using scripts and bots for content containing certain keywords und specifications"
+    "crawling": "The act of searching the web using scripts and bots for content containing certain keywords und specifications",
+
+    "neolithic": "Era..."
 
   };
